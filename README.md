@@ -28,11 +28,11 @@ pip install pandas openpyxl
 Run the script from the command line:
 
 ```bash
-python clean_grades.py <canvas_gradebook.csv> <psets.xlsx> <pset_number>
+python clean_pset_grades_export.py <canvas_gradebook.csv> <psets.xlsx> <pset_number>
 ```
 Example:
 ```bash
-python clean_grades.py gradebook.csv psets.xlsx 1
+python clean_pset_grades_export.py gradebook.csv psets.xlsx 1
 ```
 This processes PSET 1, matches student names, cleans the grades, and saves the output as:
 📄 `gradebook_grades_ps1.csv`
