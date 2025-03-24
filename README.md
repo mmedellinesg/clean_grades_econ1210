@@ -53,13 +53,15 @@ Student (full name, case-insensitive)
 Grade (numeric score, with date-like errors handled)
 
 ## Output
-A cleaned CSV file named:
+Two cleaned CSV files named:
 ```php-template
 <section>_grades_ps<pset>.csv
+<section>_comments_ps<pset>.csv
 ```
 Example output file:
 ```
 section1_grades_ps1.csv
+section1_comments_ps1.csv
 ```
 
 ## How It Works
