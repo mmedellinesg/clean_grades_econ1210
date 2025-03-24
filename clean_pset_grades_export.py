@@ -62,13 +62,22 @@ def main(input_file_canvas, input_file_psets, pset):
     )
 
     out.drop(
-        columns=['name_match', 'Student_ps1', 'Grade', 'Comments'], 
+        columns=['name_match', 'Student_ps1', 'Grade'], 
         inplace=True
     )
     # %%
     output_path = os.path.join(outdir,f'{section}_grades_ps{pset}.csv')
+    comments_path = os.path.join(outdir,f'{section}_comments_ps{pset}.csv')
 
-    out.to_csv(
+    out.drop(columns=relevant_col).rename(columns={
+        'Comments': f'Comments {relevant_col}'
+    }).to_csv(
+        comments_path, 
+        index=False
+    )
+    print(f"Comments saved to {comments_path}")
+
+    out.drop(columns='Comments').to_csv(
         output_path, 
         index=False
     )
